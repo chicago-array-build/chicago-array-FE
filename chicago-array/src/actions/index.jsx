@@ -11,7 +11,8 @@ export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
 export const signUp = (creds) => dispatch => {
     console.log(creds)
     dispatch({ type: SIGNUP_START })
-        axios.post('https://chicago-aot.herokuapp.com/api/auth/register', creds)
+        axios
+        .post('https://chicago-aot.herokuapp.com/api/auth/register', creds)
         .then(res => {
             console.log(res);
             dispatch({ type: SIGNUP_SUCCESS, payload: res.data })
@@ -29,12 +30,13 @@ export const SIGNIN_FAILURE = 'SIGNIN_FAILURE';
 
 export const signIn = (creds) => dispatch => {
     dispatch({ type: SIGNIN_START })
-    axiosWithAuth()
+    return axiosWithAuth()
         .post('https://chicago-aot.herokuapp.com/api/auth/login', creds)
         .then(res => {
             console.log(res);
             localStorage.setItem('preciousToken', res.data.token)
             dispatch({ type: SIGNIN_SUCCESS, payload: res.data.token })
+            
         })
         .catch(err => {
             console.log(err.response);
@@ -55,4 +57,11 @@ export const fetchData = (dataObj) => dispatch => {
             console.log(res);
         })
         .catch(err => {console.log(err.response)})
+}
+
+
+export const SIGN_OUT = 'SIGN_OUT';
+export const signOut = () => dispatch => {
+    dispatch({ type: SIGN_OUT })
+    localStorage.removeItem('preciousToken');
 }
