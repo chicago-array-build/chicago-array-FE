@@ -5,6 +5,7 @@ import { signIn } from '../../actions';
 
 class SignIn extends React.Component {
     state = {
+        isLoggedIn: false,
         username: '',
         password: ''
     }
