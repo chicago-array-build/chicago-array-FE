@@ -33,8 +33,8 @@ export const signIn = (creds) => dispatch => {
         .post('https://chicago-aot.herokuapp.com/api/auth/login', creds)
         .then(res => {
             console.log(res);
-            localStorage.setItem('preciousToken', res.data.payload)
-            dispatch({ type: SIGNIN_SUCCESS, payload: res.data.payload })
+            localStorage.setItem('preciousToken', res.data.token)
+            dispatch({ type: SIGNIN_SUCCESS, payload: res.data.token })
         })
         .catch(err => {
             console.log(err.response);
