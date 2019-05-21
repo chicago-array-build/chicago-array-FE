@@ -2,6 +2,8 @@ import axios from "axios";
 
 import { axiosWithAuth } from '../components/authorization/axiosWithAuth';
 
+
+// SignUP
 export const SIGNUP_START = 'SIGNUP_START';
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
 export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
@@ -20,6 +22,7 @@ export const signUp = (creds) => dispatch => {
         })
 }
 
+// SignIN
 export const SIGNIN_START = 'SIGNIN_START';
 export const SIGNIN_SUCCESS = 'SIGNIN_SUCCESS';
 export const SIGNIN_FAILURE = 'SIGNIN_FAILURE';
@@ -39,6 +42,7 @@ export const signIn = (creds) => dispatch => {
         })
 }
 
+// Fetch
 export const FETCH_START = 'FETCH_START';
 // export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 // export const FETCH_FAILURE = 'FETCH_FAILURE';
@@ -46,7 +50,9 @@ export const FETCH_START = 'FETCH_START';
 export const fetchData = (creds) => dispatch => {
     dispatch({ type: FETCH_START })
     axios
-        .post('https://chicago-aot.herokuapp.com/api/auth/login', creds)
-        .then(res => {console.log(res)})
+        .post('https://chicago-aot.herokuapp.com/api/nodes', JSON.stringify(creds))
+        .then(res => {
+            console.log(res);
+        })
         .catch(err => {console.log(err.response)})
 }

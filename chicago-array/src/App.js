@@ -6,13 +6,15 @@ import './App.css';
 import SignIn from "./components/authorization/SignIn";
 import SignUp from "./components/authorization/SignUp";
 // import PrivateRoute from './components/PrivateRoute';
-// import './assets/Chicago-AoT.png'
+import ChicagoAOT from './assets/Chicago-AoT.png'
 
 
 function App(props) {
   return (
     <div className="App">
-      {/* <img src="./assets/Chicago-AoT.png" alt="chicago array of things" /> */}
+      <section className="app-img">
+        <img src={ChicagoAOT} alt="chicago array of things" />
+      </section>
       <h1>Sign In or Sign Up</h1>
       <Route path="/" component={SignUp} />
       <Route path="/" component={SignIn} />

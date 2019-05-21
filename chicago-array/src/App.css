@@ -31,3 +31,10 @@
     transform: rotate(360deg);
   }
 }
+
+/* Specific CSS */
+.app-img img{
+  width: 25%;
+  margin: 2rem;
+  /* border: 1px solid red; */
+}

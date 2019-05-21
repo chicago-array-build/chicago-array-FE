@@ -13,23 +13,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action){
     switch(action.type){
-        case SIGNIN_START:
-        return {
-            ...state,
-            loggingIn: true,
-            error: '',
-        }
-        case SIGNIN_SUCCESS:
-        return {
-            ...state,
-            loggingIn: false, 
-        }
-        case SIGNIN_FAILURE:
-        return {
-            ...state,
-            loggingIn: false,
-            error: action.payload,
-        }
+        // SIGNUP
         case SIGNUP_START:
         return {
             ...state, 
@@ -47,6 +31,25 @@ export default function reducer(state = initialState, action){
             signingUp: false,
             error: action.payload,
         }
+        // SIGNIN
+        case SIGNIN_START:
+        return {
+            ...state,
+            loggingIn: true,
+            error: '',
+        }
+        case SIGNIN_SUCCESS:
+        return {
+            ...state,
+            loggingIn: false, 
+        }
+        case SIGNIN_FAILURE:
+        return {
+            ...state,
+            loggingIn: false,
+            error: action.payload,
+        }
+        // FETCH
         case FETCH_START:
         return {
             ...state, 
