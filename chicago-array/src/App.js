@@ -29,9 +29,12 @@ function App(props) {
         <SignOut />
       </section>
       {/* <h1>Welcome to the Chicago Array of Things</h1> */}
-      <section className="app-img">
-        <img src={ChicagoAOT} alt="chicago array of things" />
-      </section>
+      {!props.isLoggedIn && (
+        <section className="app-img">
+          <img src={ChicagoAOT} alt="chicago array of things" />
+        </section>
+      )}
+
       <Route path="/signup" component={SignUp} />
       <Route exact path="/signin" component={SignIn} />
       <PrivateRoute exact path="/selectors" component={Selectors} />
