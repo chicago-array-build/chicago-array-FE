@@ -1,9 +1,5 @@
 import axios from "axios";
 
-
-
-// import axios from 'axios';
-
 import { axiosWithAuth } from '../components/authorization/axiosWithAuth';
 
 export const SIGNUP_START = 'SIGNUP_START';
