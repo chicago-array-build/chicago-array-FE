@@ -28,6 +28,7 @@ class SignUp extends React.Component {
     render(){
         return (
             <section>
+                <h1>Sign UP</h1>
                 <form onSubmit={this.signUp} action="">
                     <input required onChange={this.handleChange} name="username" value={this.state.username} type="text" placeholder="Username" />
                     <input required onChange={this.handleChange} name="password" value={this.state.password} type="password" placeholder="Password" />

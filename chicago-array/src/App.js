@@ -2,19 +2,32 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
+//Components
 import './App.css';
 import SignIn from "./components/authorization/SignIn";
 import SignUp from "./components/authorization/SignUp";
+
+// Material UI Components
+import NavBar from "./components/Navigation/NavBar";
+import Hamburger from "./components/Navigation/Hamburger";
 // import PrivateRoute from './components/PrivateRoute';
-// import './assets/Chicago-AoT.png'
+
+// images
+import ChicagoAOT from './assets/Chicago-AoT.png'
 
 
 function App(props) {
   return (
     <div className="App">
-      {/* <img src="./assets/Chicago-AoT.png" alt="chicago array of things" /> */}
-      <h1>Sign In or Sign Up</h1>
-      <Route path="/" component={SignUp} />
+      <section>
+        <NavBar />
+        {/* <Hamburger /> */}
+      </section>
+      {/* <h1>Welcome to the Chicago Array of Things</h1> */}
+      <section className="app-img">
+        <img src={ChicagoAOT} alt="chicago array of things" />
+      </section>
+      <Route path="/signup" component={SignUp} />
       <Route path="/" component={SignIn} />
       {/* <PrivateRoute exact path="/selectors" component={selections} /> */}
       <section>
