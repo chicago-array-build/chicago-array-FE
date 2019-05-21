@@ -47,10 +47,10 @@ export const FETCH_START = 'FETCH_START';
 // export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 // export const FETCH_FAILURE = 'FETCH_FAILURE';
 
-export const fetchData = (creds) => dispatch => {
+export const fetchData = (dataObj) => dispatch => {
     dispatch({ type: FETCH_START })
     axios
-        .post('https://chicago-aot.herokuapp.com/api/nodes', JSON.stringify(creds))
+        .post('https://chicago-aot.herokuapp.com/api/nodes', JSON.stringify(dataObj))
         .then(res => {
             console.log(res);
         })
