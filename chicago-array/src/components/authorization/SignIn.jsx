@@ -24,6 +24,7 @@ class SignIn extends React.Component {
             username: '',
             password: ''
         })
+        this.props.history.push("/selectors");
     }
 
     render(){

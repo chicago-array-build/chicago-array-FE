@@ -13,7 +13,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
             if(localStorage.getItem('preciousToken')){
                 return <Component />;
             } else {
-                return <Redirect to='/SignUp' />;
+                return <Redirect to='/' />;
             }
         }} />
     )
