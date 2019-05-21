@@ -10,7 +10,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 import { connect } from 'react-redux';
 import { CardActionArea } from '@material-ui/core';
-import { fetchData } from './actions';
+import { fetchData } from '../actions';
 
 
 // Selectors = (event) => {
@@ -78,12 +78,12 @@ class Selectors extends React.Component {
               }
               label={this.state.measure}
             />
-            <FormControlLabel
+            {/* <FormControlLabel
               control={
                 <Checkbox checked={Other} onChange={this.handleChange('other')} value="other" />
               }
               label="Other"
-            />
+            /> */}
             <FormControlLabel
               control={
                 <Checkbox
