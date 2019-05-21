@@ -2,11 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
-// styles & components
+//Components
 import './App.css';
 import SignIn from "./components/authorization/SignIn";
 import SignUp from "./components/authorization/SignUp";
-import PrimarySearchAppBar from "./components/ButtonAppBar";
+
+// Material UI Components
+import NavBar from "./components/Navigation/NavBar";
+import Hamburger from "./components/Navigation/Hamburger";
 // import PrivateRoute from './components/PrivateRoute';
 
 // images
@@ -17,14 +20,15 @@ function App(props) {
   return (
     <div className="App">
       <section>
-        <PrimarySearchAppBar />
+        <NavBar />
+        {/* <Hamburger /> */}
       </section>
-      <h1>Welcome to the Chicago Array of Things</h1>
+      {/* <h1>Welcome to the Chicago Array of Things</h1> */}
       <section className="app-img">
         <img src={ChicagoAOT} alt="chicago array of things" />
       </section>
       <Route path="/signup" component={SignUp} />
-      <Route path="/signin" component={SignIn} />
+      <Route path="/" component={SignIn} />
       {/* <PrivateRoute exact path="/selectors" component={selections} /> */}
       <section>
         <h3>{props.error}</h3>

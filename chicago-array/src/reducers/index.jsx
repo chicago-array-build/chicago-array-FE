@@ -6,6 +6,7 @@ const initialState = {
     password: '',
     signingUp: false, 
     loggingIn: false,
+    isLoggedIn: false,
     fetchingData: false,
     error: '',
 }
@@ -42,6 +43,7 @@ export default function reducer(state = initialState, action){
         return {
             ...state,
             loggingIn: false, 
+            isLoggedIn: true,
         }
         case SIGNIN_FAILURE:
         return {

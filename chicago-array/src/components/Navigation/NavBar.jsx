@@ -25,7 +25,7 @@ menuButton: {
 },
 };
 
-function ButtonAppBar(props) {
+function NavBar(props) {
 const { classes } = props;
 return (
     <div className={classes.root}>
@@ -35,10 +35,10 @@ return (
             <MenuIcon />
         </IconButton>
         <Typography variant="h6" color="inherit" className={classes.grow}>
-            CHICAGO ARRAY OF THINGS
+        <h4>WELCOME TO CHICAGO ARRAY OF THINGS</h4>
         </Typography>
         <NavLink to="/"><Button color="secondary">Home</Button></NavLink>
-        <NavLink to="/signin"><Button color="secondary">Sign In</Button></NavLink>
+        <NavLink to="/"><Button color="secondary">Sign In</Button></NavLink>
         <NavLink to="/signup"><Button color="secondary">Sign Up</Button></NavLink>
         </Toolbar>
     </AppBar>
@@ -46,8 +46,8 @@ return (
 );
 }
 
-ButtonAppBar.propTypes = {
+NavBar.propTypes = {
 classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ButtonAppBar);
+export default withStyles(styles)(NavBar);

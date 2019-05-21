@@ -1,4 +1,5 @@
 .App {
+  /* margin: 0 auto; */
   text-align: center;
 }
 
@@ -32,9 +33,11 @@
   }
 }
 
-/* Specific CSS */
+/* OUR CSS */
 .app-img img{
   width: 25%;
   margin: 2rem;
   /* border: 1px solid red; */
 }
+
+/* NAVIGATION */
