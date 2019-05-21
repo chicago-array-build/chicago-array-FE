@@ -35,7 +35,7 @@ return (
             <MenuIcon />
         </IconButton>
         <Typography variant="h6" color="inherit" className={classes.grow}>
-        <h4>WELCOME TO CHICAGO ARRAY OF THINGS</h4>
+            WELCOME TO CHICAGO ARRAY OF THINGS
         </Typography>
         <NavLink to="/"><Button color="secondary">Home</Button></NavLink>
         <NavLink to="/"><Button color="secondary">Sign In</Button></NavLink>
