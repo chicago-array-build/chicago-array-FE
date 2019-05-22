@@ -78,8 +78,15 @@ class Selectors extends React.Component {
               }
               label={this.state.measure}
             />
-            <FormControlLabel
+            {/* <FormControlLabel
               control={
+
+                <Checkbox checked={Other} onChange={this.handleChange('other')} value="other" />
+              }
+              label="Other"
+            /> */}
+            <FormControlLabel
+              control=
                 <Checkbox
                   checked={area}
                   onChange={this.handleChange('area')}
