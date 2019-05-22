@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import './copyurl.css';
+
 class CopyURL extends React.Component{
     state = {
         myURL: "",
@@ -15,7 +17,7 @@ class CopyURL extends React.Component{
 
     copyURL = (event) => {
         event.preventDefault()
-        console.log(this.props.isLoggedIn)
+        // console.log(this.props.isLoggedIn)
         const disURL = document.querySelector('#urlholder').select()
         document.execCommand('copy', false, disURL)
         this.setState({
@@ -27,7 +29,7 @@ class CopyURL extends React.Component{
     render(){
         return (
             <div>
-                <input onChange={this.handleChange} id="urlholder" type="text" value={this.props.isLoggedIn}/>
+                <input id="urlholder" onChange={this.handleChange} type="text" value={this.props.isLoggedIn}/>
                 <button onClick={this.copyURL}>Copy URL</button>
             </div>
         )
@@ -36,7 +38,6 @@ class CopyURL extends React.Component{
 
 const mapStateToProps = state => ({
     caotData: state.caotData,
-    username: state.username,
     isLoggedIn: state.isLoggedIn,
 
 })
