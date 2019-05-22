@@ -7,7 +7,7 @@ import SignIn from "./components/authorization/SignIn";
 import SignUp from "./components/authorization/SignUp";
 import Selectors from "./components/Selectors";
 // import Test from "./components/test/Test";
-// import CopyURL from "./components/copyurl/CopyURL"
+import CopyURL from "./components/copyurl/CopyURL"
 
 
 // Material UI Components
@@ -46,9 +46,9 @@ function App(props) {
       <section>
         <h3>{props.message || props.error}</h3>
       </section>
-      {/* <section>
+      <section>
         <CopyURL />
-      </section> */}
+      </section>
     </div>
   );
 }

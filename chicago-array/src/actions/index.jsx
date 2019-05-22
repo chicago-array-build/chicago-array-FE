@@ -51,9 +51,9 @@ export const FETCH_FAILURE = 'FETCH_FAILURE';
 
 export const fetchData = (dataObj) => dispatch => {
     dispatch({ type: FETCH_START })
-    // console.log(dataObj)
+    console.log(dataObj)
     axios
-        .post('https://chicago-aot.herokuapp.com/api/nodes', JSON.stringify(dataObj))
+        .post('https://chicago-aot.herokuapp.com/api/nodes', dataObj)
         .then(res => {
             console.log(res);
             dispatch({ type: FETCH_SUCCESS, payload: res.url })
