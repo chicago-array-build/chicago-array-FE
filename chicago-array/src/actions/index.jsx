@@ -46,17 +46,22 @@ export const signIn = (creds) => dispatch => {
 
 // Fetch
 export const FETCH_START = 'FETCH_START';
-// export const FETCH_SUCCESS = 'FETCH_SUCCESS';
-// export const FETCH_FAILURE = 'FETCH_FAILURE';
+export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+export const FETCH_FAILURE = 'FETCH_FAILURE';
 
 export const fetchData = (dataObj) => dispatch => {
     dispatch({ type: FETCH_START })
+    // console.log(dataObj)
     axios
         .post('https://chicago-aot.herokuapp.com/api/nodes', JSON.stringify(dataObj))
         .then(res => {
             console.log(res);
+            dispatch({ type: FETCH_SUCCESS, payload: res.url })
         })
-        .catch(err => {console.log(err.response)})
+        .catch(err => {
+            console.log(err.response);
+            dispatch({ type: FETCH_FAILURE, payload: `${err.response.status} ${err.response.statusText}` })
+        })
 }
 
 
