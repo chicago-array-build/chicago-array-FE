@@ -3,13 +3,16 @@ import { connect } from 'react-redux';
 
 class CopyURL extends React.Component{
     state = {
-        myURL: "",
+        // myURL: "",
         copied: false,
     }
 
     copyURL = (event) => {
         event.preventDefault()
-        document.execCommand(copy, )
+        document.execCommand(copy, false, `${this.props.caotData}`)
+        this.setState({
+            copied: true,
+        })
     }
 
     render(){
@@ -21,4 +24,8 @@ class CopyURL extends React.Component{
     }
 }
 
-export default connect(null, null)(CopyURL)
+const mapStateToProps = state => ({
+    caotData: state.caotData,
+})
+
+export default connect(mapStateToProps, null)(CopyURL)
