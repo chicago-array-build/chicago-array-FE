@@ -9,7 +9,8 @@ class CopyURL extends React.Component{
 
     copyURL = (event) => {
         event.preventDefault()
-        document.execCommand('copy', true, `${this.props.caotData}`)
+        console.log(this.props)
+        document.execCommand('copy', false, `${this.props.caotData}`)
         this.setState({
             copied: true,
         })
@@ -18,7 +19,7 @@ class CopyURL extends React.Component{
     render(){
         return (
             <div>
-                <button>Copy URL</button>
+                <button onClick={this.copyURL}>Copy URL</button>
             </div>
         )
     }

@@ -5,10 +5,10 @@ import { fetchData } from '../../actions';
 
 class Test extends React.Component{
     state = {
-        Sensor_Type: "Environmental Data",
-        Measure: "Temperature",
-        Time: "Last 24 hours",
-        Community_area: "Uptown",
+        "sensor_type": "Environmental Data",
+        "measure": "Temperature",
+        "time_period": 24,
+        "community_area": "Uptown",
     }
 
     fetchData = (event) => {
