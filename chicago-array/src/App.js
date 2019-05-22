@@ -29,7 +29,6 @@ function App(props) {
         {props.isLoggedIn && 
           (<SignOut />)
         }
-
       </section>
       {/* <h1>Welcome to the Chicago Array of Things</h1> */}
       {!props.isLoggedIn && (
