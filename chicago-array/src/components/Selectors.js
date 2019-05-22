@@ -48,7 +48,16 @@ class Selectors extends React.Component {
 
   fetchData = event => {event.preventDefault(); this.props.fetchData(this.state)};
 
-  getMeasures = name => {console.log(name)};
+  getMeasures = value => {
+      const sensorType = props.value;
+      if (value === 'ED') {
+          return measure;
+      }else if (value === 'AQ') {
+          return ;
+      }else (value === 'IP') {
+          return ;
+      }
+  };
 
   render() {
     const { classes } = this.props;
@@ -62,9 +71,21 @@ class Selectors extends React.Component {
           <FormGroup>
             <FormControlLabel
               control={
-                <Checkbox name='sensorType' checked={sensorType} onChange={this.handleChange('sensorType')} value="ED" />
+                <Checkbox name='sensorType' onChange={this.handleChange('sensorType')} value="ED" />
               }
               label="Environmental Data"
+            />
+                        <FormControlLabel
+              control={
+                <Checkbox name='sensorType' onChange={this.handleChange('sensorType')} value="AQ" />
+              }
+              label="Air Quality"
+            />
+                        <FormControlLabel
+              control={
+                <Checkbox name='sensorType' onChange={this.handleChange('sensorType')} value="IP" />
+              }
+              label="Image Processing"
             />
           </FormGroup>
           <FormHelperText>Select one measure per Sensor Type.</FormHelperText>
@@ -92,7 +113,7 @@ class Selectors extends React.Component {
           <FormHelperText>Select Only One Measure</FormHelperText>
         </FormControl>
         <section>
-        <iframe src="https://plot.ly/~chris/1638" height="600px" width="1000px"></iframe>
+        <iframe border="2px" src="https://plot.ly/~chris/1638" height="600px" width="1000px"></iframe>
         </section>
       </div>
     );
