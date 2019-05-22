@@ -22,7 +22,7 @@ class CopyURL extends React.Component{
         return (
             <div>
                 <Clipboard data-clipboard-text={this.props.caotData}>
-                    Copy URL
+                    Copy URL To Clipboard
                 </Clipboard>
             </div>
         )

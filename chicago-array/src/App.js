@@ -11,7 +11,6 @@ import CopyURL from "./components/copyurl/CopyURL"
 
 // Material UI Components
 import NavBar from "./components/Navigation/NavBar";
-import SignOut from "./components/authorization/SignOut";
 // import Hamburger from "./components/Navigation/Hamburger";
 import PrivateRoute from './components/PrivateRoute';
 
@@ -28,9 +27,6 @@ function App(props) {
       <section>
         <NavBar />
         {/* <Hamburger /> */}
-        {props.isLoggedIn && 
-          (<SignOut />)
-        }
       </section>
       {/* <h1>Welcome to the Chicago Array of Things</h1> */}
       {!props.isLoggedIn && (
@@ -47,9 +43,9 @@ function App(props) {
       <Route path="/signup" component={SignUp} />
       <Route exact path="/" component={SignIn} />
       <PrivateRoute exact path="/selectors" component={Test} />
-        <section>
+        {/* <section>
           <h3>{props.message || props.error}</h3>
-        </section>
+        </section> */}
     </div>
   );
 }
