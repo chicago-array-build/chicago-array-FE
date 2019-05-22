@@ -26,7 +26,9 @@ function App(props) {
       <section>
         <NavBar />
         {/* <Hamburger /> */}
-        <SignOut />
+        {props.isLoggedIn && 
+          (<SignOut />)
+        }
       </section>
       {/* <h1>Welcome to the Chicago Array of Things</h1> */}
       {!props.isLoggedIn && (
