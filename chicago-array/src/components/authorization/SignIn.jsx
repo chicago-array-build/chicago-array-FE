@@ -5,6 +5,7 @@ import { signIn } from '../../actions';
 
 class SignIn extends React.Component {
     state = {
+        isLoggedIn: false,
         username: '',
         password: ''
     }
@@ -19,7 +20,9 @@ class SignIn extends React.Component {
 
     signIn = (event) => {
         event.preventDefault()
-        this.props.signIn(this.state)
+        this.props.signIn(this.state).then(() => {
+            this.props.history.push("/selectors");
+        })
         this.setState({
             username: '',
             password: ''
@@ -29,6 +32,7 @@ class SignIn extends React.Component {
     render(){
         return (
             <section>
+                <h1>Sign In</h1>
                 <form onSubmit={this.signIn} >
                     <input onChange={this.handleChange} name="username" value={this.state.username} type="text" placeholder="Username" required />
                     <input onChange={this.handleChange} name="password" value={this.state.password} type="password" placeholder="Password" required />
