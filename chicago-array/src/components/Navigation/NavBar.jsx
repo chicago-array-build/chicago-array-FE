@@ -37,9 +37,9 @@ return (
         <Typography variant="h6" color="inherit" className={classes.grow}>
             WELCOME TO CHICAGO ARRAY OF THINGS
         </Typography>
-        <NavLink exact to="/"><Button color="secondary">Home</Button></NavLink>
-        <NavLink exact to="/signin"><Button color="secondary">Sign In</Button></NavLink>
-        <NavLink exact to="/signup"><Button color="secondary">Sign Up</Button></NavLink>
+        <NavLink exact to="/"><Button color="white">Home</Button></NavLink>
+        <NavLink exact to="/signin"><Button color="white">Sign In</Button></NavLink>
+        <NavLink exact to="/signup"><Button color="white">Sign Up</Button></NavLink>
         </Toolbar>
     </AppBar>
     </div>
