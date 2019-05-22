@@ -50,7 +50,6 @@ class Selectors extends React.Component {
     this.props.fetchData(this.state);
   };
 
-<<<<<<< HEAD
   getMeasures = value => {
       const sensorType = props.value;
       if (value === 'ED') {
@@ -60,10 +59,9 @@ class Selectors extends React.Component {
       }else (value === 'IP') {
           return ;
       }
-=======
+
   getMeasures = name => {
     console.log(name);
->>>>>>> e40eee0936661dfcf8210b41e3ad6c870f2dfa69
   };
 
   render() {
@@ -80,16 +78,7 @@ class Selectors extends React.Component {
           <FormGroup>
             <FormControlLabel
               control={
-<<<<<<< HEAD
                 <Checkbox name='sensorType' onChange={this.handleChange('sensorType')} value="ED" />
-=======
-                <Checkbox
-                  name="sensorType"
-                  checked={sensorType}
-                  onChange={this.handleChange("sensorType")}
-                  value="ED"
-                />
->>>>>>> e40eee0936661dfcf8210b41e3ad6c870f2dfa69
               }
               label="Environmental Data"
             />
@@ -159,5 +148,3 @@ export default connect(
   mapStateToProps,
   { fetchData }
 )(withStyles(styles)(Selectors));
-
-// Comment to commit
