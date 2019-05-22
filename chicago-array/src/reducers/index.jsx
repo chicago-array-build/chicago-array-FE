@@ -75,7 +75,7 @@ export default function reducer(state = initialState, action){
         return {
             ...state,
             fetchingData: false,
-            isLoggedIn: false,
+            isLoggedIn: true,
             caotData: action.payload,
         }
         case FETCH_FAILURE: 

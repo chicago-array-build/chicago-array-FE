@@ -5,15 +5,23 @@ import Clipboard from 'react-clipboard.js';
 import './copyurl.css';
 
 class CopyURL extends React.Component{
-    // state = {
-    //     myURL: "",
-    //     copied: false,
-    // }
+    state = {
+        myURL: this.props.caotData,
+        // copied: false,
+    }
+
+    copy = (event) => {
+        event.preventDefault() 
+        this.setState({
+            copied: true,
+        })
+    } 
 
     render(){
+        console.log(this.props.caotData)
         return (
             <div>
-                <Clipboard data-clipboard-text={this.props.isLoggedIn}>
+                <Clipboard data-clipboard-text={this.props.caotData}>
                     Copy URL
                 </Clipboard>
             </div>
