@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Clipboard from 'react-clipboard.js';
 
 import './copyurl.css';
 
@@ -9,28 +10,12 @@ class CopyURL extends React.Component{
         // copied: false,
     }
 
-    handleChange = (event) => {
-        this.setState({
-            myURL: event.target.value
-        })
-    }
-
-    copyURL = (event) => {
-        event.preventDefault()
-        // console.log(this.props.isLoggedIn)
-        const disURL = document.querySelector('#urlholder').select()
-        document.execCommand('copy', false, disURL)
-        this.setState({
-            myURL: "",
-            copied: true,
-        })
-    }
-
     render(){
         return (
             <div>
-                <input id="urlholder" onChange={this.handleChange} type="text" value={this.props.isLoggedIn}/>
-                <button onClick={this.copyURL}>Copy URL</button>
+                <Clipboard data-clipboard-text={this.props.isLoggedIn}>
+                    Copy URL
+                </Clipboard>
             </div>
         )
     }
