@@ -62,7 +62,7 @@ class Selectors extends React.Component {
           <FormGroup>
             <FormControlLabel
               control={
-                <Checkbox name='EnviromentalData' checked={sensorType} onChange={this.handleChange('sensorType')} value="ED" />
+                <Checkbox name='sensorType' checked={sensorType} onChange={this.handleChange('sensorType')} value="ED" />
               }
               label="Environmental Data"
             />
@@ -80,12 +80,13 @@ class Selectors extends React.Component {
             />
             {/* <FormControlLabel
               control={
+
                 <Checkbox checked={Other} onChange={this.handleChange('other')} value="other" />
               }
               label="Other"
             /> */}
             <FormControlLabel
-              control={
+              control=
                 <Checkbox
                   checked={area}
                   onChange={this.handleChange('area')}
@@ -95,7 +96,7 @@ class Selectors extends React.Component {
               label="Community/Area"
             />
           </FormGroup>
-          <FormHelperText>You can display an error</FormHelperText>
+          <FormHelperText>Select Only One Measure</FormHelperText>
         </FormControl>
       </div>
     );
