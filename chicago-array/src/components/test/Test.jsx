@@ -17,7 +17,7 @@ class Test extends React.Component{
     }
 
     render(){
-        // console.log(this.props.caotData)
+        console.log(this.props.caotData)
         console.log(this.props.error)
         return (
             <div>
@@ -25,7 +25,7 @@ class Test extends React.Component{
                     <button onClick={this.fetchData} type="submit">FETCHMYDATA</button>
                 </form>
                 <section>
-                    <iframe src={this.props.caotData} title="myGraph" frameBorder="5" width="500px" height="300px"></iframe>
+                    <iframe src={this.props.caotData || "https://plot.ly/~chris/1638"} title="myGraph" frameBorder="5" width="1000px" height="600px"></iframe>
                 </section>
             </div>
         )

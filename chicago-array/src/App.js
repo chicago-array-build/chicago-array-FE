@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom';
 import SignIn from "./components/authorization/SignIn";
 import SignUp from "./components/authorization/SignUp";
 import Selectors from "./components/Selectors";
-// import Test from "./components/test/Test";
+import Test from "./components/test/Test";
 import CopyURL from "./components/copyurl/CopyURL"
 
 // Material UI Components
@@ -38,16 +38,18 @@ function App(props) {
           <img src={ChicagoAOT} alt="chicago array of things" />
         </section>
       )}
+      { props.isLoggedIn && (
+        <section>
+          <CopyURL />
+        </section>
+      ) }
 
       <Route path="/signup" component={SignUp} />
       <Route exact path="/" component={SignIn} />
-      <PrivateRoute exact path="/selectors" component={Selectors} />
-      <section>
-        <h3>{props.message || props.error}</h3>
-      </section>
-      <section>
-        <CopyURL />
-      </section>
+      <PrivateRoute exact path="/selectors" component={Test} />
+        <section>
+          <h3>{props.message || props.error}</h3>
+        </section>
     </div>
   );
 }

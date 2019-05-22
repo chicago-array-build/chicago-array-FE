@@ -6,6 +6,7 @@ import { axiosWithAuth } from '../components/authorization/axiosWithAuth';
 // SignUP
 export const SIGNUP_START = 'SIGNUP_START';
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
+export const SIGNED_IN = 'SIGNED_IN';
 export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
 
 export const signUp = (creds) => dispatch => {
@@ -16,6 +17,9 @@ export const signUp = (creds) => dispatch => {
         .then(res => {
             console.log(res);
             dispatch({ type: SIGNUP_SUCCESS, payload: res.data })
+        })
+        .then(() => {
+            dispatch({ type: SIGNED_IN })
         })
         .catch(err => {
             console.log(err.response);
@@ -56,7 +60,7 @@ export const fetchData = (dataObj) => dispatch => {
         .post('https://chicago-aot.herokuapp.com/api/nodes', dataObj)
         .then(res => {
             console.log(res);
-            dispatch({ type: FETCH_SUCCESS, payload: res.url })
+            dispatch({ type: FETCH_SUCCESS, payload: res.data.url })
         })
         .catch(err => {
             console.log(err.response);
