@@ -98,13 +98,6 @@ class Selectors extends React.Component {
               }
               label={this.state.measure}
             />
-            {/* <FormControlLabel
-              control={
-
-                <Checkbox checked={Other} onChange={this.handleChange('other')} value="other" />
-              }
-              label="Other"
-            /> */}
             <FormControlLabel
               control={
                 <Checkbox
@@ -118,6 +111,9 @@ class Selectors extends React.Component {
           </FormGroup>
           <FormHelperText>Select Only One Measure</FormHelperText>
         </FormControl>
+        <section>
+        <iframe src="https://plot.ly/~chris/1638" height="600px" width="1000px"></iframe>
+        </section>
       </div>
     );
   }
