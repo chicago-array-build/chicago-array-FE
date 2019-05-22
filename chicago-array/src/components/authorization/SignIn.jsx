@@ -38,7 +38,7 @@ class SignIn extends React.Component {
                     <input onChange={this.handleChange} name="password" value={this.state.password} type="password" placeholder="Password" required />
                     <button onClick={this.signIn} type="submit">SignIn</button>
                 </form>
-                <p>If you aren't already a user, please <a href="http://localhost:3000/signup">sign up</a>!</p>
+                {!this.props.signedUp && (<p>If you aren't already a user, please <a href="http://localhost:3000/signup">SIGN UP</a>!</p>)}
             </section>
         )
     }
