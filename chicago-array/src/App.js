@@ -36,7 +36,7 @@ function App(props) {
       )}
 
       <Route path="/signup" component={SignUp} />
-      <Route exact path="/signin" component={SignIn} />
+      <Route exact path="/" component={SignIn} />
       <PrivateRoute exact path="/selectors" component={Selectors} />
       <section>
         <h3>{props.error}</h3>

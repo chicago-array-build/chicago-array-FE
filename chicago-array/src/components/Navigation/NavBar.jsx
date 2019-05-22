@@ -38,7 +38,7 @@ return (
             WELCOME TO CHICAGO ARRAY OF THINGS
         </Typography>
         <NavLink exact to="/"><Button color="secondary">Home</Button></NavLink>
-        <NavLink exact to="/signin"><Button color="secondary">Sign In</Button></NavLink>
+        <NavLink exact to="/"><Button color="secondary">Sign In</Button></NavLink>
         <NavLink exact to="/signup"><Button color="secondary">Sign Up</Button></NavLink>
         </Toolbar>
     </AppBar>
