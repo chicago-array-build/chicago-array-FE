@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom';
 import SignIn from "./components/authorization/SignIn";
 import SignUp from "./components/authorization/SignUp";
 import Selectors from "./components/Selectors";
+// import Test from "./components/test/Test";
 
 // Material UI Components
 import NavBar from "./components/Navigation/NavBar";
@@ -26,7 +27,9 @@ function App(props) {
       <section>
         <NavBar />
         {/* <Hamburger /> */}
-        <SignOut />
+        {props.isLoggedIn && 
+          (<SignOut />)
+        }
       </section>
       {/* <h1>Welcome to the Chicago Array of Things</h1> */}
       {!props.isLoggedIn && (
@@ -36,10 +39,10 @@ function App(props) {
       )}
 
       <Route path="/signup" component={SignUp} />
-      <Route exact path="/signin" component={SignIn} />
+      <Route exact path="/" component={SignIn} />
       <PrivateRoute exact path="/selectors" component={Selectors} />
       <section>
-        <h3>{props.error}</h3>
+        <h3>{props.message || props.error}</h3>
       </section>
     </div>
   );
