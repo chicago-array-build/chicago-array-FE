@@ -1,0 +1,12 @@
+.fetch-copy{
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fetch-RSD {
+    width: 10rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(0, 153, 255);
+}

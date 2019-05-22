@@ -7,7 +7,6 @@ import SignIn from "./components/authorization/SignIn";
 import SignUp from "./components/authorization/SignUp";
 import Selectors from "./components/Selectors";
 import Test from "./components/test/Test";
-import CopyURL from "./components/copyurl/CopyURL"
 
 // Material UI Components
 import NavBar from "./components/Navigation/NavBar";
@@ -34,12 +33,6 @@ function App(props) {
           <img src={ChicagoAOT} alt="chicago array of things" />
         </section>
       )}
-      { props.isLoggedIn && (
-        <section>
-          <CopyURL />
-        </section>
-      ) }
-
       <Route path="/signup" component={SignUp} />
       <Route exact path="/" component={SignIn} />
       <PrivateRoute exact path="/selectors" component={Test} />
