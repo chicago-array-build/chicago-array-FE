@@ -10,7 +10,7 @@ class CopyURL extends React.Component{
     copyURL = (event) => {
         event.preventDefault()
         console.log(this.props)
-        document.execCommand('copy', false, `${this.props.caotData}`)
+        document.execCommand('copy', false, `${this.props.isLoggedIn}`)
         this.setState({
             copied: true,
         })
@@ -27,6 +27,9 @@ class CopyURL extends React.Component{
 
 const mapStateToProps = state => ({
     caotData: state.caotData,
+    username: state.username,
+    isLoggedIn: state.isLoggedIn,
+
 })
 
 export default connect(mapStateToProps, null)(CopyURL)
