@@ -3,7 +3,13 @@ import { connect } from 'react-redux';
 
 class GraphHistory extends React.Component{
     state = {
-        myurl: '',
+        myurl: [],
+    }
+
+    componentDidMount(){
+        this.setState({
+            myurl: this.props.caotDataHistory
+        })
     }
 
     render(){
@@ -12,7 +18,7 @@ class GraphHistory extends React.Component{
             
             <div>
                 <h4>Graph History</h4>
-                {this.props.caotDataHistory.map(caotURL => {
+                {this.state.myurl.map(caotURL => {
                     return (<a className="caotURL" key={caotURL} href={caotURL}>{caotURL}</a>)
                 })}
             </div>
@@ -22,6 +28,7 @@ class GraphHistory extends React.Component{
 
 const mapStateToProps = state => ({
     caotDataHistory: state.caotDataHistory,
+    isLoggedIn: state.isLoggedIn
 })
 
 export default connect(mapStateToProps)(GraphHistory);
