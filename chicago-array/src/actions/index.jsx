@@ -75,7 +75,7 @@ export const CHECK_AUTH_FAILURE = 'CHECK_AUTH_FAILURE';
 export const checkAuth = () => dispatch => {
     dispatch({ type: CHECK_AUTH_START })
     if(localStorage.getItem('preciousToken')){
-        console.log(localStorage.getItem('preciousToken'))
+        // console.log(localStorage.getItem('preciousToken'))
     dispatch({ type: CHECK_AUTH_SUCCESS, payload: true})
     }
     if(!localStorage.getItem('preciousToken')){
