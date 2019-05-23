@@ -118,7 +118,7 @@ export default function reducer(state = initialState, action){
             ...state,
             savingURL: false,
             savedURL: true,
-            caotDataHistory: [...state.caotDataHistory, action.payload],
+            caotDataHistory: [...state.caotDataHistory, action.payload]
         }
         case SIGN_OUT:
         return {

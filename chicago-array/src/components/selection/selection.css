@@ -41,7 +41,13 @@
 
 .graph-hist a{
     font-size: .7rem;
+    display: flex;
+    justify-content: center;
 }
+
+/* .caotURL {
+    
+} */
 
 
 /* Filters */
