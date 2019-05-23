@@ -1,50 +1,66 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { signUp } from '../../actions';
+import React from "react";
+import { connect } from "react-redux";
+import { signUp } from "../../actions";
 
 class SignUp extends React.Component {
-    state = {
-        username: '',
-        password: ''
-    }
+  state = {
+    username: "",
+    password: ""
+  };
 
-    handleChange = (event) => {
-        // console.log(this.state)
-        this.setState({
-            ...this.state,
-            [event.target.name]: event.target.value
-        })
-    }
+  handleChange = event => {
+    // console.log(this.state)
+    this.setState({
+      ...this.state,
+      [event.target.name]: event.target.value
+    });
+  };
 
-    signUp = (event) => {
-        event.preventDefault()
-        this.props.signUp(this.state)
-        this.setState({
-            username: '',
-            password: ''
-        })
-        this.props.history.push('/')
-    }
+  signUp = event => {
+    event.preventDefault();
+    this.props.signUp(this.state);
+    this.setState({
+      username: "",
+      password: ""
+    });
+    this.props.history.push("/");
+  };
 
-    render(){
-        return (
-            <section>
-                <h1>Sign UP</h1>
-                <form onSubmit={this.signUp} action="">
-                    <input required onChange={this.handleChange} name="username" value={this.state.username} type="text" placeholder="Username" />
-                    <input required onChange={this.handleChange} name="password" value={this.state.password} type="password" placeholder="Password" />
-                    <button onClick={this.signUp} type="submit">SignUp</button>
-                </form>
-            </section>
-        )
-    }
+  render() {
+    return (
+      <section>
+        <h1>Sign Up</h1>
+        <form onSubmit={this.signUp} action="">
+          <input
+            required
+            onChange={this.handleChange}
+            name="username"
+            value={this.state.username}
+            type="text"
+            placeholder="Username"
+          />
+          <input
+            required
+            onChange={this.handleChange}
+            name="password"
+            value={this.state.password}
+            type="password"
+            placeholder="Password"
+          />
+          <button onClick={this.signUp} type="submit">
+            Sign Up
+          </button>
+        </form>
+      </section>
+    );
+  }
 }
 
 const mapStateToProps = state => ({
-    ...state,
-})
+  ...state
+});
 
 export default connect(
-    mapStateToProps,
-    { signUp }
-)(SignUp)
+  mapStateToProps,
+  { signUp }
+)(SignUp);
