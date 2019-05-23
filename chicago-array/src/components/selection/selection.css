@@ -1,10 +1,10 @@
-/* .fetch-copy{
+.fetch-copy{
     width: 69.5%;
-    margin: 1rem 0 1rem 25.5rem;
+    margin: 1rem 0 1rem 21rem;
     display: flex;
-    justify-content: space-around;
-    border: 1px solid red;
-} */
+    justify-content: start;
+    /* border: 1px solid red; */
+}
 
 .fetch-RSD {
     width: 10rem;
