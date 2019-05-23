@@ -1,16 +1,17 @@
-import { SIGNIN_START, SIGNIN_SUCCESS, SIGNED_IN, SIGNIN_FAILURE, SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_FAILURE, FETCH_START, FETCH_SUCCESS, FETCH_FAILURE, CHECK_AUTH_START, CHECK_AUTH_SUCCESS, CHECK_AUTH_FAILURE, SIGN_OUT } from '../actions';
+import { CHECK_AUTH_START, CHECK_AUTH_SUCCESS, CHECK_AUTH_FAILURE, SIGNIN_START, SIGNIN_SUCCESS, SIGNED_IN, SIGNIN_FAILURE, SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_FAILURE, FETCH_START, FETCH_SUCCESS, FETCH_FAILURE, SAVE_URL_START, SIGN_OUT } from '../actions';
 
 const initialState = {
     caotData: '',
+    caotDataHistory: [],
     username: '',
     password: '',
     message: '',
+    error: '',
     signingUp: false, 
     signedUp: false,
     loggingIn: false,
     isLoggedIn: false,
     fetchingData: false,
-    error: '',
 }
 
 
@@ -103,6 +104,11 @@ export default function reducer(state = initialState, action){
             ...state,
             isLoggedIn: false,
             error: action.payload,
+        }
+        case SAVE_URL_START:
+        return {
+            ...state,
+            caotDataHistory: action.payload
         }
         case SIGN_OUT:
         return {

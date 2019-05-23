@@ -88,6 +88,12 @@ this.setState({
 fetchData = (event) => {
     event.preventDefault()
     this.props.fetchData(this.state)
+    this.setState({
+        "sensor_type": '',
+        "measure": '',
+        "time_period": "last 7 days",
+        "community_area": "all",
+    })
 }
 
 render() {

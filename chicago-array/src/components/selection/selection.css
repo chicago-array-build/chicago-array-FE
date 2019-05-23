@@ -15,8 +15,28 @@
     right: 34rem; */
 }
 
-.filt-n-iframe {
+.select-view-container {
     display: flex;
+    border: 1px solid red;
+}
+
+.filt-n-graph-hist {
+    display: flex;
+    flex-direction: column;
+}
+
+.selectors {
+    height: 16rem;
+}
+
+.graph-hist {
+    height: 21.5rem;
+    overflow: auto;
+    border: 1px solid black;
+}
+
+.graph-hist p{
+    font-size: .7rem;
 }
 
 
