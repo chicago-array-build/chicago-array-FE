@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import React from './node_modules/reacte_modules/react';
+import PropTypes from './node_modules/prop-typesules/prop-types';
+import { withStyles } from './node_modules/@material-ui/core/styles-ui/core/styles';
+import Drawer from './node_modules/@material-ui/core/Drawer-ui/core/Drawer';
+import Button from './node_modules/@material-ui/core/Button-ui/core/Button';
+import List from './node_modules/@material-ui/core/Listal-ui/core/List';
+import Divider from './node_modules/@material-ui/core/Dividerui/core/Divider';
+import ListItem from './node_modules/@material-ui/core/ListItemi/core/ListItem';
+import ListItemIcon from './node_modules/@material-ui/core/ListItemIconre/ListItemIcon';
+import ListItemText from './node_modules/@material-ui/core/ListItemTextre/ListItemText';
+import InboxIcon from './node_modules/@material-ui/icons/MoveToInboxons/MoveToInbox';
+import MailIcon from './node_modules/@material-ui/icons/Maill-ui/icons/Mail';
 
 const styles = {
 list: {
