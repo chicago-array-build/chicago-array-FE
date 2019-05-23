@@ -92,7 +92,7 @@ fetchData = (event) => {
 
 render() {
 const { classes } = this.props;
-console.log(this.state)
+// console.log(this.state)
 return (
     <div className="filter-drops">
         <h5>Select a SENSOR and MEASURE type, then SUBMIT</h5>
