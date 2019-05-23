@@ -1,61 +1,56 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { checkAuth } from './actions';
-import { Route } from 'react-router-dom';
+import React from "react";
+import { connect } from "react-redux";
+import { checkAuth } from "./actions";
+import { Route } from "react-router-dom";
 
 //Components
 import SignIn from "./components/authorization/SignIn";
 import SignUp from "./components/authorization/SignUp";
 import Select from "./components/selection/SelectView";
 
-
 // Material UI Components
 import NavBar from "./components/Navigation/NavBar";
 // import Hamburger from "./components/Navigation/Hamburger";
-import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute from "./components/PrivateRoute";
 
 // styles
-import './App.css';
+import "./App.css";
 
 // images
-import ChicagoAOT from './assets/Chicago-AoT.png'
-
+import ChicagoAOT from "./assets/Chicago-AoT-Data-Tools.png";
 
 class App extends React.Component {
-
-  componentDidMount(){
-    this.props.checkAuth()
+  componentDidMount() {
+    this.props.checkAuth();
   }
 
-  render(){
-  return (
-    <div className="App">
-      <section>
-        <NavBar />
-        {/* <Hamburger /> */}
-      </section>
-      {/* <h1>Welcome to the Chicago Array of Things</h1> */}
-      {!this.props.isLoggedIn &&(
-        <section className="app-img">
-          <img src={ChicagoAOT} alt="chicago array of things" />
+  render() {
+    return (
+      <div className="App">
+        <section>
+          <NavBar />
+          {/* <Hamburger /> */}
         </section>
-        )
-      } 
-      <Route path="/signup" component={SignUp} />
-      <Route exact path="/" component={SignIn} />
-      <PrivateRoute exact path="/selectors" component={Select} />
+        {/* <h1>Welcome to the Chicago Array of Things</h1> */}
+        {!this.props.isLoggedIn && (
+          <section className="app-img">
+            <img src={ChicagoAOT} alt="chicago array of things" />
+          </section>
+        )}
+        <Route path="/signup" component={SignUp} />
+        <Route exact path="/" component={SignIn} />
+        <PrivateRoute exact path="/selectors" component={Select} />
         {/* <section>
           <h3>{props.message || props.error}</h3>
         </section> */}
-    </div>
-  );
-}
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => ({
-  ...state,
-})
-
+  ...state
+});
 
 export default connect(
   mapStateToProps,
