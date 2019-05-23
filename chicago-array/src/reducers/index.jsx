@@ -1,4 +1,4 @@
-import { SIGNIN_START, SIGNIN_SUCCESS, SIGNED_IN, SIGNIN_FAILURE, SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_FAILURE, FETCH_START, FETCH_SUCCESS, FETCH_FAILURE, SIGN_OUT } from '../actions';
+import { SIGNIN_START, SIGNIN_SUCCESS, SIGNED_IN, SIGNIN_FAILURE, SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_FAILURE, FETCH_START, FETCH_SUCCESS, FETCH_FAILURE, CHECK_AUTH_START, CHECK_AUTH_SUCCESS, CHECK_AUTH_FAILURE, SIGN_OUT } from '../actions';
 
 const initialState = {
     caotData: '',
@@ -49,6 +49,7 @@ export default function reducer(state = initialState, action){
             loggingIn: false, 
             isLoggedIn: true,
             signedUp: false,
+            // checkAuthFailed: true,
             message: 'YOU SIGNED IN SUCESSFULLY!' 
         }
         case SIGNED_IN:
@@ -83,6 +84,25 @@ export default function reducer(state = initialState, action){
             ...state,
             fetchingData: false,
             error: action.payload
+        }
+        case CHECK_AUTH_START:
+        return {
+            ...state,
+            loggingIn: true,
+            error: '',
+        }
+        case CHECK_AUTH_SUCCESS:
+        return {
+            ...state,
+            loggingIn: false,
+            isLoggedIn: action.payload,
+            error: '',
+        }
+        case CHECK_AUTH_FAILURE:
+        return {
+            ...state,
+            isLoggedIn: false,
+            error: action.payload,
         }
         case SIGN_OUT:
         return {
