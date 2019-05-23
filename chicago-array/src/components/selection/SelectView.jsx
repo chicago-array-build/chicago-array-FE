@@ -1,14 +1,13 @@
 import React from 'react'
 
 import { connect } from 'react-redux';
-import { fetchData } from '../../actions';
 
 // Styling
-import './test.css';
+import './selection.css';
 
 // Components
 import CopyURL from "../copyurl/CopyURL";
-import Filters from "./Filters";
+import Filters from "./Filter";
 
 
 class Test extends React.Component{
@@ -19,20 +18,11 @@ class Test extends React.Component{
         "community_area": "Uptown",
     }
 
-    fetchData = (event) => {
-        event.preventDefault()
-        this.props.fetchData(this.state)
-    }
-
     render(){
         console.log(this.props.caotData)
         console.log(this.props.error)
         return (
             <div>
-                <section className="fetch-copy">
-                    <CopyURL />
-                    <button className="fetch-RSD" onClick={this.fetchData} type="submit">RETRIEVE SENSOR DATA</button>
-                </section>
                 <div className="filt-n-iframe">
                     <section>
                         <Filters />
@@ -41,16 +31,20 @@ class Test extends React.Component{
                         <iframe src={this.props.caotData || "https://plot.ly/~chris/1638"} title="myGraph" frameBorder="5" width="1000px" height="600px"></iframe>
                     </section>
                 </div>
+                {this.props.caotData && (
+                    <section className="fetch-copy">
+                        <CopyURL />
+                    </section>
+                )}
             </div>
         )
     }
 }
 
 const mapStateToProps = state => ({
-    ...state
+    caotData: state.caotData,
 }) 
 
 export default connect(
     mapStateToProps, 
-    { fetchData }
 )(Test)

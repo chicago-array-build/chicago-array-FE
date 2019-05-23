@@ -5,8 +5,7 @@ import { Route } from 'react-router-dom';
 //Components
 import SignIn from "./components/authorization/SignIn";
 import SignUp from "./components/authorization/SignUp";
-import Selectors from "./components/Selectors";
-import Test from "./components/test/Test";
+import Select from "./components/selection/SelectView";
 
 
 // Material UI Components
@@ -36,7 +35,7 @@ function App(props) {
       )}
       <Route path="/signup" component={SignUp} />
       <Route exact path="/" component={SignIn} />
-      <PrivateRoute exact path="/selectors" component={Test} />
+      <PrivateRoute exact path="/selectors" component={Select} />
         {/* <section>
           <h3>{props.message || props.error}</h3>
         </section> */}
