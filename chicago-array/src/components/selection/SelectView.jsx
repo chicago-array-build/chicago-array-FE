@@ -14,7 +14,7 @@ class Test extends React.Component{
     state = {
         "sensor_type": "Environmental Data",
         "measure": "Temperature",
-        "time_period": 7,
+        "time_period": "last 7 days",
         "community_area": "Uptown",
     }
 

@@ -68,9 +68,24 @@ export const fetchData = (dataObj) => dispatch => {
         })
 }
 
+export const CHECK_AUTH_START = 'CHECK_AUTH_START';
+export const CHECK_AUTH_SUCCESS = 'CHECK_AUTH_SUCCESS';
+export const CHECK_AUTH_FAILURE = 'CHECK_AUTH_FAILURE';
+
+export const checkAuth = () => dispatch => {
+    dispatch({ type: CHECK_AUTH_START })
+    if(localStorage.getItem('preciousToken')){
+        console.log(localStorage.getItem('preciousToken'))
+    dispatch({ type: CHECK_AUTH_SUCCESS, payload: true})
+    }
+    if(!localStorage.getItem('preciousToken')){
+        dispatch({ type: CHECK_AUTH_FAILURE })
+    }
+}
 
 export const SIGN_OUT = 'SIGN_OUT';
 export const signOut = () => dispatch => {
     dispatch({ type: SIGN_OUT })
     localStorage.removeItem('preciousToken');
 }
+

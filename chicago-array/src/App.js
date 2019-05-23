@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { checkAuth } from './actions';
 import { Route } from 'react-router-dom';
 
 //Components
@@ -20,7 +21,13 @@ import './App.css';
 import ChicagoAOT from './assets/Chicago-AoT.png'
 
 
-function App(props) {
+class App extends React.Component {
+
+  componentDidMount(){
+    this.props.checkAuth()
+  }
+
+  render(){
   return (
     <div className="App">
       <section>
@@ -28,11 +35,12 @@ function App(props) {
         {/* <Hamburger /> */}
       </section>
       {/* <h1>Welcome to the Chicago Array of Things</h1> */}
-      {!props.isLoggedIn && (
+      {!this.props.isLoggedIn &&(
         <section className="app-img">
           <img src={ChicagoAOT} alt="chicago array of things" />
         </section>
-      )}
+        )
+      } 
       <Route path="/signup" component={SignUp} />
       <Route exact path="/" component={SignIn} />
       <PrivateRoute exact path="/selectors" component={Select} />
@@ -42,6 +50,7 @@ function App(props) {
     </div>
   );
 }
+}
 
 const mapStateToProps = state => ({
   ...state,
@@ -50,4 +59,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
+  { checkAuth }
 )(App);
