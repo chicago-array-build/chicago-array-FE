@@ -7,7 +7,7 @@ class SignIn extends React.Component {
     state = {
         isLoggedIn: false,
         username: '',
-        password: ''
+        password: '',
     }
 
     handleChange = (event) => {

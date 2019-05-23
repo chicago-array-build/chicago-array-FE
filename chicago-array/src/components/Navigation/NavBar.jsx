@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // Material UI
 import { withStyles } from '@material-ui/core/styles';
@@ -11,6 +12,10 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+
+// Components
+import SignOut from "../authorization/SignOut";
+
 
 const styles = {
 root: {
@@ -38,8 +43,15 @@ return (
             WELCOME TO CHICAGO ARRAY OF THINGS
         </Typography>
         {/* <NavLink exact to="/"><Button color="secondary">Home</Button></NavLink> */}
-        <NavLink exact to="/"><Button color="secondary">Sign In</Button></NavLink>
-        <NavLink to="/signup"><Button color="secondary">Sign Up</Button></NavLink>
+        {!props.isLoggedIn && (
+            <section>
+                <NavLink exact to="/"><Button color="secondary">Sign In</Button></NavLink>
+                <NavLink to="/signup"><Button color="secondary">Sign Up</Button></NavLink>
+            </section>
+        )}
+        {props.isLoggedIn && 
+            (<SignOut />)
+        }
         </Toolbar>
     </AppBar>
     </div>
@@ -50,4 +62,10 @@ NavBar.propTypes = {
 classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(NavBar);
+const mapStateToProps = state => ({
+    isLoggedIn: state.isLoggedIn,
+})
+
+export default connect(
+    mapStateToProps
+)(withStyles(styles)(NavBar));

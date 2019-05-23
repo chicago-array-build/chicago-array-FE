@@ -1,3 +1,10 @@
 #urlholder {
     display: inline-block;
 }
+
+.copyurl {
+        width: 10rem;
+        font-weight: bold;
+        color: white;
+        background-color: rgb(0, 153, 255);
+}

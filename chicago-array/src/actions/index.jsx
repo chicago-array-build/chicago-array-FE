@@ -6,19 +6,23 @@ import { axiosWithAuth } from '../components/authorization/axiosWithAuth';
 // SignUP
 export const SIGNUP_START = 'SIGNUP_START';
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
+export const SIGNED_IN = 'SIGNED_IN';
 export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
 
 export const signUp = (creds) => dispatch => {
-    console.log(creds)
+    // console.log(creds)
     dispatch({ type: SIGNUP_START })
         axios
         .post('https://chicago-aot.herokuapp.com/api/auth/register', creds)
         .then(res => {
-            console.log(res);
+            // console.log(res);
             dispatch({ type: SIGNUP_SUCCESS, payload: res.data })
         })
+        .then(() => {
+            dispatch({ type: SIGNED_IN })
+        })
         .catch(err => {
-            console.log(err.response);
+            // console.log(err.response);
             dispatch({ type: SIGNUP_FAILURE, payload: `${err.response.status}: ${err.response.statusText || "CRAZY UNKNOWN ERROR"}` })
         })
 }
@@ -33,13 +37,13 @@ export const signIn = (creds) => dispatch => {
     return axiosWithAuth()
         .post('https://chicago-aot.herokuapp.com/api/auth/login', creds)
         .then(res => {
-            console.log(res);
+            // console.log(res);
             localStorage.setItem('preciousToken', res.data.token)
             dispatch({ type: SIGNIN_SUCCESS, payload: res.data.token })
             
         })
         .catch(err => {
-            console.log(err.response);
+            // console.log(err.response);
             dispatch({ type: SIGNIN_FAILURE, payload: `${err.response.status}: ${err.response.statusText || "CRAZY UNKNOWN ERROR"}` })
         })
 }
@@ -51,15 +55,15 @@ export const FETCH_FAILURE = 'FETCH_FAILURE';
 
 export const fetchData = (dataObj) => dispatch => {
     dispatch({ type: FETCH_START })
-    console.log(dataObj)
+    // console.log(dataObj)
     axios
         .post('https://chicago-aot.herokuapp.com/api/nodes', dataObj)
         .then(res => {
-            console.log(res);
-            dispatch({ type: FETCH_SUCCESS, payload: res.url })
+            // console.log(res);
+            dispatch({ type: FETCH_SUCCESS, payload: res.data.url })
         })
         .catch(err => {
-            console.log(err.response);
+            // console.log(err.response);
             dispatch({ type: FETCH_FAILURE, payload: `${err.response.status} ${err.response.statusText}` })
         })
 }
