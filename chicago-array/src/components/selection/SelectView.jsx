@@ -19,8 +19,8 @@ class Test extends React.Component{
     }
 
     render(){
-        console.log(this.props.caotData)
-        console.log(this.props.error)
+        // console.log(this.props.caotData)
+        // console.log(this.props.error)
         return (
             <div>
                 <div className="filt-n-iframe">
@@ -43,6 +43,7 @@ class Test extends React.Component{
 
 const mapStateToProps = state => ({
     caotData: state.caotData,
+    error: state.error,
 }) 
 
 export default connect(
