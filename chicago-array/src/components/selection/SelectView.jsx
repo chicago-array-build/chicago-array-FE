@@ -27,8 +27,8 @@ class Test extends React.Component{
                             <GraphHistory />
                         </section>
                     </div>
-                    <section>
-                        <iframe src={this.props.caotData || "https://plot.ly/~chris/1638"} title="myGraph" frameBorder="5" width="1000px" height="600px"></iframe>
+                    <section className="i-iframe">
+                        <iframe src={this.props.caotData || "https://plot.ly/~chris/1638"} title="myGraph" frameBorder="0" width="1000px" height="600px"></iframe>
                     </section>
                 </div>
                 {this.props.caotData && (

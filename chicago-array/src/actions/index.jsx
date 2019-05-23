@@ -73,7 +73,7 @@ export const FETCH_FAILURE = 'FETCH_FAILURE';
 export const fetchData = (dataObj) => dispatch => {
     dispatch({ type: FETCH_START })
     // console.log(dataObj)
-    axios
+    return axios
         .post('https://chicago-aot.herokuapp.com/api/nodes', dataObj)
         .then(res => {
             // console.log(res);
@@ -87,9 +87,11 @@ export const fetchData = (dataObj) => dispatch => {
 
 // Save History
 export const SAVE_URL_START = 'SAVE_URL_START';
+export const SAVE_URL_SUCCESS = 'SAVE_URL_SUCCESS';
 export const saveURL = (url) => dispatch => {
-    console.log(url)
-    dispatch({ type: SAVE_URL_START, payload: url })
+    dispatch({ type: SAVE_URL_START })
+    // console.log(url)
+    dispatch({ type: SAVE_URL_SUCCESS, payload: url })
 }
 
 

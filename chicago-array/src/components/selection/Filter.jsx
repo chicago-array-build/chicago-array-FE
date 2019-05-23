@@ -8,7 +8,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 import { connect } from 'react-redux';
-import { fetchData } from '../../actions';
+import { fetchData, saveURL } from '../../actions';
 
 
 // Local MUI stylings
@@ -88,6 +88,9 @@ this.setState({
 fetchData = (event) => {
     event.preventDefault()
     this.props.fetchData(this.state)
+    .then(() => {
+        this.props.saveURL(this.props.caotData)
+    })
     this.setState({
         "sensor_type": '',
         "measure": '',
@@ -156,4 +159,4 @@ MultipleSelect.propTypes = {
 classes: PropTypes.object.isRequired,
 };
 
-export default connect(mapStateToProps, { fetchData })(withStyles(styles, { withTheme: true })(MultipleSelect));
+export default connect(mapStateToProps, { fetchData, saveURL })(withStyles(styles, { withTheme: true })(MultipleSelect));
