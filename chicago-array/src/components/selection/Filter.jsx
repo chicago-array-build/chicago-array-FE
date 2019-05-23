@@ -63,7 +63,7 @@ class MultipleSelect extends React.Component {
 state = {
     "sensor_type": '',
     "measure": '',
-    "time_period": 7,
+    "time_period": "last 7 days",
     "community_area": "all",
 };
 
