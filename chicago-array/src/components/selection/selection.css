@@ -1,16 +1,18 @@
-.fetch-copy{
+/* .fetch-copy{
     width: 69.5%;
     margin: 1rem 0 1rem 25.5rem;
     display: flex;
     justify-content: space-around;
-    /* border: 1px solid red; */
-}
+    border: 1px solid red;
+} */
 
 .fetch-RSD {
     width: 10rem;
     font-weight: bold;
     color: white;
     background-color: rgb(0, 153, 255);
+    /* position: relative;
+    right: 34rem; */
 }
 
 .filt-n-iframe {
@@ -20,13 +22,18 @@
 
 /* Filters */
 .filter-drops {
-    width: 90%;
+    width: 20rem;
     margin-left: 1rem;
     display: flex;
-    border: 1px solid red;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* border: 1px solid red; */
 }
 
-a {
+h4 {
+    width: 100%;
+}
+/* a {
     text-decoration: none;
 }
 
@@ -83,4 +90,4 @@ ul li ul:hover {
 ul li ul li {
     clear: both;
     width: 100%;
-}
+} */
