@@ -27,7 +27,7 @@ root: {
 grow: {
     marginLeft: 90,
     flexGrow: 1,
-    color: "red",
+    // color: "red",
 },
 menuButton: {
     marginLeft: -12,
