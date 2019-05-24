@@ -1,8 +1,18 @@
 # chicago-array-FE
 * Project deployment site:  https://chicago-aot.netlify.com/
-* Official site for Chicago Array of Things:  https://arrayofthings.github.io/
 
 * The Chicago Array of Things is doing a fantastic job of collecting all kinds of data, and lots of it. This app is intended to make sense of all this data in an easy-to-visualize way that we can understand and use to better the city of Chicago.  It is also our intent to provide a tool for others to use to evaluate the necessity of CAOT for their own city.
+
+#Traversing FE of our site
+##NAVLINKS, A tags, and buttons
+###NavBar
+- HOME takes you to our UI guys marketing page: `https://chicago-array-build.github.io/chicago-array-build-ui-mike/index.html`
+- Sign In: `/`
+- Sign Up: `/signup`
+- Sign Out: `/` and deletes token
+
+### GraphHistory
+- COPY GRAPH URL: makes a copy of the `active` graph displayed to clipboard
 
 
 #Project Primary Objectives:
@@ -30,7 +40,7 @@
 * Base URL for server interactions: `https://chicago-aot.herokuapp.com`
 * **[POST]** * to `/api/auth/register` : to register unique username and password
 * **[POST]** * to `/api/auth/login`: returns a token to be added to the header of all other requests. Pass in the following credentials as the `body` of the request
-* **[POST]** * to `/api/nodes`: returns a plotly `url` used to display a visualization of data based on the sensor endpoints requested.
+* **[POST]** * to `/api/nodes`: returns a plotly `url` used to display a visualization of data based on the sensor endpoints requested.  Currently rendered in an <i-frame>
 
 ## SENSORS
 - 'Environmental Data',
@@ -50,3 +60,4 @@
 - "all"
 
 
+# Official site for Chicago Array of Things:  https://arrayofthings.github.io/
