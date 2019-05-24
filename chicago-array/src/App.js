@@ -7,11 +7,12 @@ import { Route } from 'react-router-dom';
 import SignIn from "./components/authorization/SignIn";
 import SignUp from "./components/authorization/SignUp";
 import Select from "./components/selection/SelectView";
+import PrivateRoute from './components/PrivateRoute';
+
 
 // Material UI Components
 import NavBar from "./components/navigation/NavBar";
 // import Hamburger from "./components/navigation/Hamburger";
-import PrivateRoute from './components/PrivateRoute';
 
 // styles
 import './App.css';
