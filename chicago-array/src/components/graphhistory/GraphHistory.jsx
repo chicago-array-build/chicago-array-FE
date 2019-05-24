@@ -9,7 +9,6 @@ class GraphHistory extends React.Component{
 
     saveURL = () => {
         this.props.saveURL(this.state.myurl)
-        // this.props.saveURL("7", "four", "tent")
     }
 
 
