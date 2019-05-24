@@ -2,6 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { saveURL } from '../../actions';
 
+// Components
+import CopyURL from "../copyurl/CopyURL";
+
+
 class GraphHistory extends React.Component{
     state = {
         myurl: '',
@@ -15,14 +19,24 @@ class GraphHistory extends React.Component{
     render(){
         // console.log(this.props)
         if(this.props.fetchingData){
-            return(<span>Loading...</span>)
+            return(<span className="loading-graph-hist">Loading...</span>)
         }else{
             return (   
                 <div>
-                    <h4>Graph History</h4>
-                    {this.props.caotDataHistory.map(caotURL => {
-                        return (<a className="caotURL" key={caotURL} href={caotURL}>{caotURL}</a>)
-                    })}
+                    <section>
+                        <h4>Graph History</h4>
+                        {!this.props.caotData && (<p>No History</p>)}
+                        {this.props.caotData && (
+                            <section className="fetch-copy">
+                                <CopyURL />
+                            </section>
+                        )}
+                    </section>
+                    <section>
+                        {this.props.caotDataHistory.map(caotURL => {
+                            return (<a className="caotURL" key={caotURL} href={caotURL}>{caotURL}</a>)
+                        })}
+                    </section>
                 </div>
             )
         }
@@ -31,6 +45,7 @@ class GraphHistory extends React.Component{
 
 
 const mapStateToProps = state => ({
+    caotData: state.caotData,
     caotDataHistory: state.caotDataHistory,
     fetchingData: state.fetchingData,
 })
