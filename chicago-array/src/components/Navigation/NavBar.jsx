@@ -44,6 +44,7 @@ return (
         <Toolbar>
         <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             {/* <MenuIcon /> */}
+            <a href="https://chicago-array-build.github.io/chicago-array-build-ui-mike/index.html"><Button color="secondary">HOME</Button></a>
         </IconButton>
         <Typography variant="h6" color="inherit" className={classes.grow}>
             WELCOME TO CHICAGO ARRAY OF THINGS
