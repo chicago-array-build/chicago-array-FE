@@ -12,7 +12,9 @@
 }
 
 .fetch-RSD {
-    width: 10rem;
+    width: 11rem;
+    height: 2rem;
+    cursor: pointer;
     font-weight: bold;
     color: white;
     background-color: rgb(0, 153, 255);
@@ -22,6 +24,7 @@
 
 .select-view-container {
     display: flex;
+    margin-top: 1rem;
     /* border: 1px solid red; */
 }
 
@@ -52,6 +55,7 @@
 
 .i-iframe {
     margin-top: 1rem;
+    margin-left: 5rem;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.12), 5px 5px 5px rgba(116, 114, 114, 0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
