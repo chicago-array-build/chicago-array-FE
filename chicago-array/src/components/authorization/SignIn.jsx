@@ -21,13 +21,16 @@ class SignIn extends React.Component {
     signIn = (event) => {
         event.preventDefault()
         this.props.signIn(this.state).then(() => {
-            this.props.history.push("/selectors");
-        })
+            !this.props.error ?
+            this.props.history.push("/selectors"):this.props.history.push("/signup") 
+        });
+        
         this.setState({
             username: '',
             password: ''
         })
     }
+
 
     render(){
         return (
@@ -38,7 +41,7 @@ class SignIn extends React.Component {
                     <input onChange={this.handleChange} name="password" value={this.state.password} type="password" placeholder="Password" required />
                     <button onClick={this.signIn} type="submit">SignIn</button>
                 </form>
-                {!this.props.signedUp && (<p>If you aren't already a user, please <a href="http://localhost:3000/signup">SIGN UP</a>!</p>)}
+                {!this.props.signedUp && (<p>If you aren't already a user, please<span className="sign-up-a" onClick={() => {this.props.history.push('/signup')}}> SIGN UP</span>!</p>)}
             </section>
         )
     }

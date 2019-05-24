@@ -15,9 +15,39 @@
     right: 34rem; */
 }
 
-.filt-n-iframe {
+.select-view-container {
     display: flex;
+    /* border: 1px solid red; */
 }
+
+.filt-n-graph-hist {
+    display: flex;
+    flex-direction: column;
+}
+
+.selectors {
+    height: 16rem;
+}
+
+.graph-hist {
+    height: 21.5rem;
+    overflow: auto;
+    border: 1px solid black;
+}
+
+.i-iframe {
+    margin-top: 1rem;
+}
+
+.graph-hist a{
+    font-size: .7rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* .caotURL {
+    
+} */
 
 
 /* Filters */

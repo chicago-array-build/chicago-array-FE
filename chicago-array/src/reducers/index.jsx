@@ -1,16 +1,19 @@
-import { SIGNIN_START, SIGNIN_SUCCESS, SIGNED_IN, SIGNIN_FAILURE, SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_FAILURE, FETCH_START, FETCH_SUCCESS, FETCH_FAILURE, CHECK_AUTH_START, CHECK_AUTH_SUCCESS, CHECK_AUTH_FAILURE, SIGN_OUT } from '../actions';
+import { CHECK_AUTH_START, CHECK_AUTH_SUCCESS, CHECK_AUTH_FAILURE, SIGNIN_START, SIGNIN_SUCCESS, SIGNED_IN, SIGNIN_FAILURE, SIGNUP_START, SIGNUP_SUCCESS, SIGNUP_FAILURE, FETCH_START, FETCH_SUCCESS, FETCH_FAILURE, SAVE_URL_START, SAVE_URL_SUCCESS, SIGN_OUT } from '../actions';
 
 const initialState = {
     caotData: '',
+    caotDataHistory: ['https://plot.ly/~chris/1638'],
     username: '',
     password: '',
     message: '',
+    error: '',
     signingUp: false, 
     signedUp: false,
     loggingIn: false,
     isLoggedIn: false,
     fetchingData: false,
-    error: '',
+    savingURL: false,
+    savedURL: true,
 }
 
 
@@ -49,12 +52,11 @@ export default function reducer(state = initialState, action){
             loggingIn: false, 
             isLoggedIn: true,
             signedUp: false,
-            // checkAuthFailed: true,
             message: 'YOU SIGNED IN SUCESSFULLY!' 
         }
         case SIGNED_IN:
         return {
-            ...this,
+            ...state,
             message: '',
         }
         case SIGNIN_FAILURE:
@@ -104,16 +106,34 @@ export default function reducer(state = initialState, action){
             isLoggedIn: false,
             error: action.payload,
         }
+        case SAVE_URL_START:
+        return {
+            ...state,
+            error: '',
+            savingURL: true,
+        }
+        case SAVE_URL_SUCCESS:
+        return {
+            ...state,
+            savingURL: false,
+            savedURL: true,
+            caotDataHistory: [...state.caotDataHistory, action.payload]
+        }
         case SIGN_OUT:
         return {
-            caotData: [],
+            caotData: '',
+            caotDataHistory: ['https://plot.ly/~chris/1638'],
             username: '',
             password: '',
+            message: '',
+            error: '',
             signingUp: false, 
+            signedUp: false,
             loggingIn: false,
             isLoggedIn: false,
             fetchingData: false,
-            error: '',
+            savingURL: false,
+            savedURL: true,
         }
     default: return state
     }
