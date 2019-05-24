@@ -19,7 +19,7 @@ import NavBar from "./components/Navigation/NavBar";
 import './App.css';
 
 // images
-import ChicagoAOT from './assets/Chicago-AoT.png'
+import ChicagoAOT from './assets/cityofdata.jpg'
 
 
 class App extends React.Component {
