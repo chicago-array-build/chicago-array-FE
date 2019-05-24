@@ -14,6 +14,7 @@ import { fetchData, saveURL } from '../../actions';
 // Local MUI stylings
 const styles = theme => ({
 root: {
+marginRight: "2rem",
 display: 'flex',
 flexWrap: 'wrap',
 flexDirection: 'column',

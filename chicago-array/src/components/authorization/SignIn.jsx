@@ -39,7 +39,7 @@ class SignIn extends React.Component {
                 <form onSubmit={this.signIn} >
                     <input onChange={this.handleChange} name="username" value={this.state.username} type="text" placeholder="Username" required />
                     <input onChange={this.handleChange} name="password" value={this.state.password} type="password" placeholder="Password" required />
-                    <button onClick={this.signIn} type="submit">SignIn</button>
+                    <button onClick={this.signIn} type="submit">SIGN IN</button>
                 </form>
                 {!this.props.signedUp && (<p>If you aren't already a user, please<span className="sign-up-a" onClick={() => {this.props.history.push('/signup')}}> SIGN UP</span>!</p>)}
             </section>

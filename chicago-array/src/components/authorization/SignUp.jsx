@@ -33,8 +33,9 @@ class SignUp extends React.Component {
                 <form onSubmit={this.signUp} action="">
                     <input required onChange={this.handleChange} name="username" value={this.state.username} type="text" placeholder="Username" />
                     <input required onChange={this.handleChange} name="password" value={this.state.password} type="password" placeholder="Password" />
-                    <button onClick={this.signUp} type="submit">SignUp</button>
+                    <button onClick={this.signUp} type="submit">SUBMIT</button>
                 </form>
+                <p>Please enter your desired username and password and then click SUBMIT.</p>
             </section>
         )
     }

@@ -34,9 +34,17 @@
 }
 
 /* OUR CSS */
+.app-img {
+    width: 30%;
+    margin-left: 34.5%;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.12), 5px 5px 5px rgba(116, 114, 114, 0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    /* border: 1px solid red; */
+}
+
 .app-img img{
-  width: 25%;
-  margin: 2rem;
+  width: 100%;
+  margin: 2rem 0 0 0;
   /* border: 1px solid red; */
 }
 
