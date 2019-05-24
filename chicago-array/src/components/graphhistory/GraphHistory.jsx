@@ -1,34 +1,38 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { saveURL } from '../../actions';
 
 class GraphHistory extends React.Component{
     state = {
-        myurl: [],
+        myurl: '',
     }
 
-    componentDidMount(){
-        this.setState({
-            myurl: this.props.caotDataHistory
-        })
+    saveURL = () => {
+        this.props.saveURL(this.state.myurl)
+        // this.props.saveURL("7", "four", "tent")
     }
+
 
     render(){
         // console.log(this.props)
-        return (
-            
-            <div>
-                <h4>Graph History</h4>
-                {this.state.myurl.map(caotURL => {
-                    return (<a className="caotURL" key={caotURL} href={caotURL}>{caotURL}</a>)
-                })}
-            </div>
-        )
+        if(this.props.fetchingData){
+            return(<span>Loading...</span>)
+        }else{
+            return (   
+                <div>
+                    <h4>Graph History</h4>
+                    {this.props.caotDataHistory.map(caotURL => {
+                        return (<a className="caotURL" key={caotURL} href={caotURL}>{caotURL}</a>)
+                    })}
+                </div>
+            )
+        }
     }
 }
 
 const mapStateToProps = state => ({
     caotDataHistory: state.caotDataHistory,
-    isLoggedIn: state.isLoggedIn
+    fetchingData: state.fetchingData,
 })
 
-export default connect(mapStateToProps)(GraphHistory);
+export default connect(mapStateToProps, { saveURL })(GraphHistory);

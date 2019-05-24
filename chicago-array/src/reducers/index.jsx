@@ -52,12 +52,11 @@ export default function reducer(state = initialState, action){
             loggingIn: false, 
             isLoggedIn: true,
             signedUp: false,
-            // checkAuthFailed: true,
             message: 'YOU SIGNED IN SUCESSFULLY!' 
         }
         case SIGNED_IN:
         return {
-            ...this,
+            ...state,
             message: '',
         }
         case SIGNIN_FAILURE:
@@ -123,7 +122,7 @@ export default function reducer(state = initialState, action){
         case SIGN_OUT:
         return {
             caotData: '',
-            caotDataHistory: ['https://plot.ly/~chris/1638',],
+            caotDataHistory: ['https://plot.ly/~chris/1638'],
             username: '',
             password: '',
             message: '',
