@@ -2,7 +2,7 @@ import { CHECK_AUTH_START, CHECK_AUTH_SUCCESS, CHECK_AUTH_FAILURE, SIGNIN_START,
 
 const initialState = {
     caotData: '',
-    caotDataHistory: ['https://plot.ly/~chris/1638'],
+    caotDataHistory: [],
     username: '',
     password: '',
     message: '',
@@ -122,7 +122,7 @@ export default function reducer(state = initialState, action){
         case SIGN_OUT:
         return {
             caotData: '',
-            caotDataHistory: ['https://plot.ly/~chris/1638'],
+            caotDataHistory: [],
             username: '',
             password: '',
             message: '',
