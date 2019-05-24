@@ -48,5 +48,3 @@
 
 ##LOCATION
 - "all"
-
-
