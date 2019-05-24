@@ -11,8 +11,8 @@ import PrivateRoute from './components/PrivateRoute';
 
 
 // Material UI Components
-import NavBar from "./components/navigation/NavBar";
-// import Hamburger from "./components/navigation/Hamburger";
+import NavBar from "./components/Navigation/NavBar";
+// import Hamburger from "./components/Navigation/Hamburger";
 
 // styles
 import './App.css';
