@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import './selection.css';
 
 // Components
-import CopyURL from "../copyurl/CopyURL";
 import Filters from "./Filter";
 import GraphHistory from "../graphhistory/GraphHistory";
 
@@ -31,11 +30,6 @@ class Test extends React.Component{
                         <iframe src={this.props.caotData || "https://plot.ly/~chris/1638"} title="myGraph" frameBorder="0" width="1000px" height="600px"></iframe>
                     </section>
                 </div>
-                {this.props.caotData && (
-                    <section className="fetch-copy">
-                        <CopyURL />
-                    </section>
-                )}
             </div>
         )
     }
