@@ -11,7 +11,7 @@ import Select from "./components/selection/SelectView";
 
 // Material UI Components
 import NavBar from "./components/navigation/NavBar";
-// import Hamburger from "./components/Navigation/Hamburger";
+// import Hamburger from "./components/navigation/Hamburger";
 import PrivateRoute from './components/PrivateRoute';
 
 // styles
