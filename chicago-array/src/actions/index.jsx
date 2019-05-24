@@ -3,6 +3,23 @@ import axios from "axios";
 import { axiosWithAuth } from '../components/authorization/axiosWithAuth';
 
 
+// CHECK AUTH
+export const CHECK_AUTH_START = 'CHECK_AUTH_START';
+export const CHECK_AUTH_SUCCESS = 'CHECK_AUTH_SUCCESS';
+export const CHECK_AUTH_FAILURE = 'CHECK_AUTH_FAILURE';
+
+export const checkAuth = () => dispatch => {
+    dispatch({ type: CHECK_AUTH_START })
+    if(localStorage.getItem('preciousToken')){
+        // console.log(localStorage.getItem('preciousToken'))
+    dispatch({ type: CHECK_AUTH_SUCCESS, payload: true})
+    }
+    if(!localStorage.getItem('preciousToken')){
+        dispatch({ type: CHECK_AUTH_FAILURE })
+    }
+}
+
+
 // SignUP
 export const SIGNUP_START = 'SIGNUP_START';
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
@@ -56,7 +73,7 @@ export const FETCH_FAILURE = 'FETCH_FAILURE';
 export const fetchData = (dataObj) => dispatch => {
     dispatch({ type: FETCH_START })
     // console.log(dataObj)
-    axios
+    return axios
         .post('https://chicago-aot.herokuapp.com/api/nodes', dataObj)
         .then(res => {
             // console.log(res);
@@ -68,21 +85,17 @@ export const fetchData = (dataObj) => dispatch => {
         })
 }
 
-export const CHECK_AUTH_START = 'CHECK_AUTH_START';
-export const CHECK_AUTH_SUCCESS = 'CHECK_AUTH_SUCCESS';
-export const CHECK_AUTH_FAILURE = 'CHECK_AUTH_FAILURE';
-
-export const checkAuth = () => dispatch => {
-    dispatch({ type: CHECK_AUTH_START })
-    if(localStorage.getItem('preciousToken')){
-        // console.log(localStorage.getItem('preciousToken'))
-    dispatch({ type: CHECK_AUTH_SUCCESS, payload: true})
-    }
-    if(!localStorage.getItem('preciousToken')){
-        dispatch({ type: CHECK_AUTH_FAILURE })
-    }
+// Save History
+export const SAVE_URL_START = 'SAVE_URL_START';
+export const SAVE_URL_SUCCESS = 'SAVE_URL_SUCCESS';
+export const saveURL = (url) => dispatch => {
+    dispatch({ type: SAVE_URL_START })
+    // console.log(url)
+    dispatch({ type: SAVE_URL_SUCCESS, payload: url })
 }
 
+
+// SIGN OUT
 export const SIGN_OUT = 'SIGN_OUT';
 export const signOut = () => dispatch => {
     dispatch({ type: SIGN_OUT })

@@ -8,27 +8,27 @@ import './selection.css';
 // Components
 import CopyURL from "../copyurl/CopyURL";
 import Filters from "./Filter";
+import GraphHistory from "../graphhistory/GraphHistory";
 
 
 class Test extends React.Component{
-    state = {
-        "sensor_type": "Environmental Data",
-        "measure": "Temperature",
-        "time_period": "last 7 days",
-        "community_area": "Uptown",
-    }
 
     render(){
         // console.log(this.props.caotData)
         // console.log(this.props.error)
         return (
             <div>
-                <div className="filt-n-iframe">
-                    <section>
-                        <Filters />
-                    </section>
-                    <section>
-                        <iframe src={this.props.caotData || "https://plot.ly/~chris/1638"} title="myGraph" frameBorder="5" width="1000px" height="600px"></iframe>
+                <div className="select-view-container">
+                    <div className="filt-n-graph-hist">
+                        <section className="selectors">
+                            <Filters />
+                        </section>
+                        <section className="graph-hist">
+                            <GraphHistory />
+                        </section>
+                    </div>
+                    <section className="i-iframe">
+                        <iframe src={this.props.caotData || "https://plot.ly/~chris/1638"} title="myGraph" frameBorder="0" width="1000px" height="600px"></iframe>
                     </section>
                 </div>
                 {this.props.caotData && (
