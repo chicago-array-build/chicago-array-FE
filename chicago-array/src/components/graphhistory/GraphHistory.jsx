@@ -30,6 +30,7 @@ class GraphHistory extends React.Component{
     }
 }
 
+
 const mapStateToProps = state => ({
     caotDataHistory: state.caotDataHistory,
     fetchingData: state.fetchingData,
