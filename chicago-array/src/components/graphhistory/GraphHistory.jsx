@@ -34,7 +34,7 @@ class GraphHistory extends React.Component{
                     </section>
                     <section>
                         {this.props.caotDataHistory.map(caotURL => {
-                            return (<a className="caotURL" key={caotURL} href={caotURL}>{caotURL}</a>)
+                            return (<a className="caotURL" key={caotURL} href={caotURL} target="_blank">{caotURL}</a>)
                         })}
                     </section>
                 </div>

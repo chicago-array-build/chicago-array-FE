@@ -13,7 +13,6 @@ import PrivateRoute from './components/PrivateRoute';
 
 // Material UI Components
 import NavBar from "./components/Navigation/NavBar";
-// import Hamburger from "./components/Navigation/Hamburger";
 
 // styles
 import './App.css';
@@ -33,9 +32,7 @@ class App extends React.Component {
     <div className="App">
       <section>
         <NavBar />
-        {/* <Hamburger /> */}
       </section>
-      {/* <h1>Welcome to the Chicago Array of Things</h1> */}
       {!this.props.isLoggedIn &&(
         <section className="app-img">
           <img src={ChicagoAOT} alt="chicago array of things" />

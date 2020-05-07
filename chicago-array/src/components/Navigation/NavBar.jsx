@@ -12,7 +12,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 
 // css styling
 import './navbar.css';
@@ -24,6 +23,9 @@ import SignOut from "../authorization/SignOut";
 const styles = {
 root: {
     flexGrow: 1,
+},
+appBar: {
+    color: "yellow",
 },
 grow: {
     marginLeft: 30,
@@ -43,13 +45,11 @@ return (
     <AppBar position="static">
         <Toolbar>
         <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            {/* <MenuIcon /> */}
             <a href="https://chicago-array-build.github.io/chicago-array-build-ui-mike/index.html"><Button color="secondary">HOME</Button></a>
         </IconButton>
         <Typography variant="h6" color="inherit" className={classes.grow}>
             WELCOME TO CHICAGO ARRAY OF THINGS
         </Typography>
-        {/* <NavLink exact to="/"><Button color="secondary">Home</Button></NavLink> */}
         {!props.isLoggedIn && (
             <section>
                 <NavLink exact to="/"><Button color="secondary">Sign In</Button></NavLink>
